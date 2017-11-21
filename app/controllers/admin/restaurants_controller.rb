@@ -1,7 +1,8 @@
 class Admin::RestaurantsController < ApplicationController
+  
 
-def index
+  def index
 
-end
+  end
 
 end
