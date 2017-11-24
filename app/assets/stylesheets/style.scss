@@ -1,1 +1,9 @@
+.pagination.my_pag > li.active > a {
+  background-color: #DC143C;
+  border-color: #DC143C;
+  color: white;
+}
 
+.pagination.my_pag > li > a {
+  color: #DC143C;
+}
