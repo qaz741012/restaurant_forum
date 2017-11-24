@@ -1,18 +1,21 @@
-<h1>Restaurants List</h1>
+<h1 class="index-title">Restaurants List</h1>
 
 <table class="table">
   <% @restaurants.each do |restaurant| %>
   <tr>
-    <td><%= image_tag restaurant.image, width: "100px" %></td>
-    <td><%= restaurant.name %></td>
-    <td><%= link_to '瀏覽', admin_restaurant_path(restaurant) %></td>
-    <td><%= link_to '編輯', edit_admin_restaurant_path(restaurant) %></td>
+    <td><div class="image-frame"><%= image_tag restaurant.image, width: "100%" %></div></td>
+    <td><p class="res-name"><%= restaurant.name %></p></td>
+    <td><%= link_to '瀏覽', admin_restaurant_path(restaurant),
+      class: "btn btn-default"%></td>
+    <td><%= link_to '編輯', edit_admin_restaurant_path(restaurant),
+    class: "btn btn-default" %></td>
     <td><%= link_to '刪除', admin_restaurant_path(restaurant),
-    method: :delete, data: {confirm: "Are you sure?"} %></td>
+    class: "btn btn-default", method: :delete, data: {confirm: "Are you sure?"} %></td>
   </tr>
   <% end %>
 </table>
 
 <%= paginate @restaurants %>
-<br>
-<%= link_to '新增餐廳', new_admin_restaurant_path %>
+<%= link_to new_admin_restaurant_path, class: "btn btn-default pull-right" do %>
+  <span class="glyphicon glyphicon-plus"></span> Add New Restaurant
+<% end %>

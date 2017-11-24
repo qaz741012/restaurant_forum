@@ -1,9 +1,79 @@
+
+/* color of pagination */
 .pagination.my_pag > li.active > a {
-  background-color: #DC143C;
-  border-color: #DC143C;
+  background-color: #FF6347;
+  border-color: #FF6347;
   color: white;
 }
 
 .pagination.my_pag > li > a {
-  color: #DC143C;
+  color: #FF6347;
+}
+
+/*navbar - log in/out*/
+.nav.navbar-nav.navbar-right {
+  color: #EEEEEE;
+  font-weight: 800;
+}
+
+.nav.navbar-nav.navbar-right > button{
+  background-color: #FFFFBB;
+  border-color: black;
+}
+
+.nav.navbar-nav.navbar-right > button > a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+}
+
+.nav.navbar-nav.navbar-right > button > a:hover {
+  color: #666666;
+}
+
+/*navbar - collapse - pull-right*/
+.nav.navbar-nav.navbar-right {
+  text-align: right;
+}
+
+/*navbar - glyphicon - user & admin*/
+.navbar-header .glyphicon {
+  font-size: 30px;
+  margin-top: 10px;
+  color: #FFFFBB;
+  margin-left: 10px;
+}
+
+/*navbar - title*/
+.res-title {
+  color: #EEEEEE;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: Lobster;
+  margin-left: 10px;
+}
+
+/*table - name, show, edit, destroy*/
+.table td > a.btn {
+  background-color: #FFFFBB;
+}
+
+.table tbody tr td {
+  vertical-align: middle;
+}
+
+.res-name {
+  color:#777777;
+  font-size: 20px;
+}
+
+/*table - image size*/
+.table .image-frame {
+  max-width: 150px;
+}
+
+/*index page title*/
+.index-title {
+  color: #777777;
 }
