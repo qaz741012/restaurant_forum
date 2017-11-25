@@ -7,29 +7,46 @@
   </ul>
 <% end %>
 
-<%= form_for [:admin, @restaurant] do |f| %>
+<div class="well">
+<%= form_for [:admin, @restaurant], :html => {class: "form-horizontal"} do |f| %>
+<div class="form-group">
+  <%= f.label :name, "Name", class: "col-xs-1 control-label" %>
+  <div class="col-xs-offset-1 col-xs-9">
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :tel, "Tel", class: "col-xs-1 control-label" %>
+  <div class="col-xs-offset-1 col-xs-9">
+    <%= f.text_field :tel, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :address, "Address", class: "col-xs-1 control-label" %>
+  <div class="col-xs-offset-1 col-xs-9">
+    <%= f.text_field :address, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :opening_hours, "Opening Hours", class: "col-xs-1" %>
+  <div class="col-xs-offset-1 col-xs-9">
+    <%= f.text_field :opening_hours, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :description, "Description", class: "col-xs-1" %>
+  <div class="col-xs-12">
+    <%= f.text_area :description, class: "form-control description-size" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :image, "Photo", class: "col-xs-1" %>
+  <%= image_tag @restaurant.image, class: "form-image-frame", width: '300px' if @restaurant.image?  %>
+  <div class="upload-button">
+    <%= f.file_field :image %>
+  </div>
+</div>
 
-  <%= f.label :name, "Name" %>
-  <%= f.text_field :name %>
-
-  <%= f.label :tel, "Tel" %>
-  <%= f.text_field :tel %>
-
-  <%= f.label :address, "Address" %>
-  <%= f.text_field :address %>
-
-  <%= f.label :opening_hours, "Opening Hours" %>
-  <%= f.text_field :opening_hours %>
-
-  <%= f.label :description, "Description" %>
-  <%= f.text_area :description %>
-
-  <%= f.label :image, "Photo" %>
-  <%= image_tag @restaurant.image, width: '300px' if @restaurant.image? %>
-  <%= f.file_field :image %>
-
-
-  <%= f.submit %>
+  <%= f.submit class: "btn btn-danger form-btn-style" %>
 <% end %>
-
-<%= link_to '回首頁', admin_restaurants_path %>
+</div>

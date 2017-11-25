@@ -82,7 +82,7 @@ body {
 }
 
 /*web page title*/
-.index-title, .show-title {
+.index-title, .show-title, .edit-title, .new-title {
   color: #777777;
 }
 
@@ -108,4 +108,34 @@ body {
 
 .show-icon {
   font-size: 20px;
+}
+
+/*form page*/
+.description-size {
+  resize: none;
+}
+
+.form-image-frame {
+  display: block;
+  margin: auto;
+}
+
+.upload-button {
+  position: relative;
+  margin-top: 10px;
+}
+
+.upload-button > input {
+  position: absolute;
+  right: 0;
+}
+
+.form-horizontal .form-btn-style{
+  background-color: #FF6347;
+  border-color: #FF6347;
+  font-weight: bold;
+}
+
+.form-horizontal .form-btn-style:hover{
+  background-color: #FF5533;
 }
