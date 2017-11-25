@@ -31,6 +31,10 @@
   color: #666666;
 }
 
+.navbar-header .navbar-toggle .icon-bar{
+  background-color: #FFFFBB;
+}
+
 /*navbar - collapse - pull-right*/
 .nav.navbar-nav.navbar-right {
   text-align: right;
@@ -73,7 +77,31 @@
   max-width: 150px;
 }
 
-/*index page title*/
-.index-title {
+/*web page title*/
+.index-title, .show-title {
   color: #777777;
+}
+
+/*show page*/
+.well {
+  background-color: #FFFFBB;
+}
+
+.well .row .show-content-detail > p{
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.well .row .col-xs-5 {
+  border-right: 3px solid #FF6347;
+  text-align: right;
+}
+
+.show-image-frame {
+  margin: auto;
+  max-width: 600px;
+}
+
+.show-icon {
+  font-size: 20px;
 }

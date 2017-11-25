@@ -1,31 +1,45 @@
-<h1><%= @restaurant.name %></h1>
+<h1 class="show-title"><%= @restaurant.name %></h1>
 
-<table>
-  <tr>
-    <th>Tel</th>
-    <td><%= @restaurant.tel %></td>
-  </tr>
-  <tr>
-    <th>Address</th>
-    <td><%= @restaurant.address %></td>
-  </tr>
-  <tr>
-    <th>Opening Hours</th>
-    <td><%= @restaurant.opening_hours %></td>
-  </tr>
-  <tr>
-    <th>Description</th>
-    <td><%= @restaurant.description %></td>
-  </tr>
-  <tr>
-    <th>Photo</th>
-    <td><%= image_tag @restaurant.image, width: '600px' %></td>
-  </tr>
-</table>
-
+<div class="well">
+  <div class="row">
+    <div class="col-xs-5 col-md-6">
+      <h3 class="show-content-title">Tel</h3>
+    </div>
+    <div class="show-content-detail col-xs-7  col-md-6">
+      <p><%= @restaurant.tel %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-5 col-md-6">
+      <h3 class="show-content-title">Address</h3>
+    </div>
+    <div class="show-content-detail col-xs-7 col-md-6">
+      <p><%= @restaurant.address %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-5 col-md-6">
+      <h3 class="show-content-title">Opening Hours</h3>
+    </div>
+    <div class="show-content-detail col-xs-7 col-md-6">
+      <p><%= @restaurant.opening_hours %></p>
+    </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-10">
+      <p class="lead"><%= @restaurant.description %></p>
+    </div>
+  </div>
+  <div>
+    <div class="show-image-frame"><%= image_tag @restaurant.image,
+    width: '100%' %></div>
+  </div>
 <br />
-<%= link_to '編輯內容', edit_admin_restaurant_path(@restaurant) %>
-<br />
-<%= link_to '刪除', admin_restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you sure?"} %>
-<br>
-<%= link_to '回首頁', admin_restaurants_path %>
+<%= link_to admin_restaurant_path(@restaurant),
+method: :delete, data: { confirm: "Are you sure?"}, class: "show-icon btn btn-default pull-right" do %>
+  <span class="glyphicon glyphicon-trash"></span>
+<% end %>
+<%= link_to edit_admin_restaurant_path(@restaurant), class: "show-icon btn btn-default pull-right" do %>
+  <span class="glyphicon glyphicon-pencil"></span>
+<% end %>
