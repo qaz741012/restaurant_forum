@@ -97,6 +97,16 @@ body {
 }
 
 /*show page*/
+.show-title {
+  display: inline-block;
+}
+
+.show-subtitle {
+  display: inline-block;
+  margin-left: 10px;
+  color: #777777;
+}
+
 .well {
   background-color: #FFFFBB;
 }
