@@ -1,9 +1,15 @@
 <h1 class="index-title">Restaurants List</h1>
 
 <table class="table">
+  <tr>
+    <td></td>
+    <th class="res-category">Category</th>
+    <th class="res-name">Name</th>
+  </tr>
   <% @restaurants.each do |restaurant| %>
   <tr>
     <td><div class="image-frame"><%= image_tag restaurant.image, width: "100%" %></div></td>
+    <td><p class=res-category><%= restaurant.category.name %></p></td>
     <td><p class="res-name"><%= restaurant.name %></p></td>
     <td><%= link_to '瀏覽', admin_restaurant_path(restaurant),
       class: "btn btn-default"%></td>
