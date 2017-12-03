@@ -8,7 +8,11 @@
     <%= f.text_field :name, placeholder: "Category Name", class: "form-control" %>
   </div>
   <%= f.submit class: "btn btn-default"%>
+  <% if @category.errors.any? %>
+    <%= @category.errors.full_messages.to_sentence %>
+  <% end %>
 <% end %>
+
 
 <br>
 <table class="table table-bordered">
