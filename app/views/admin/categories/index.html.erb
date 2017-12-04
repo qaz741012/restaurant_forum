@@ -1,7 +1,9 @@
-<h1>Category</h1>
+<h1 class="index-title">Categories List</h1>
 
-<%= link_to "Restaurants", admin_restaurants_path %>
-
+<%= link_to admin_restaurants_path, class: "btn btn-default" do %>
+  <span class="glyphicon glyphicon-arrow-left"></span> Restaurants List
+<% end %>
+<hr>
 
 <%= form_for [:admin, @category], html: {class: "form-inline"} do |f| %>
   <div class="form-group">
@@ -15,10 +17,10 @@
 
 
 <br>
-<table class="table table-bordered">
+<table class="table">
   <thead>
     <tr>
-      <th>#</th>
+      <th></th>
       <th>Name</th>
       <th></th><th></th>
     </tr>
@@ -28,9 +30,10 @@
       <tr>
         <td><%= category.id %></td>
         <td><%= category.name %></td>
-        <td><%= link_to "Edit", admin_categories_path(id: category.id) %></td>
-        <td><%= link_to "Delete", admin_category_path(category),
-        method: :delete, data: {confirm: "Are you sure?"} %></td>
+        <td><%= link_to "編輯", admin_categories_path(id: category.id),
+        class: "btn btn-default" %></td>
+        <td><%= link_to "刪除", admin_category_path(category),
+        class: "btn btn-default", method: :delete, data: {confirm: "Are you sure?"} %></td>
       </tr>
     <% end %>
   </tbody>

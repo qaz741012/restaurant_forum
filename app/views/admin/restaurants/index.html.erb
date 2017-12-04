@@ -1,6 +1,10 @@
 <h1 class="index-title">Restaurants List</h1>
 
-<%= link_to "Categories", admin_categories_path %>
+<%= link_to admin_categories_path, class: "btn btn-default" do %>
+  <span class="glyphicon glyphicon-arrow-right"> Categories List</span>
+<% end %>
+<hr>
+
 <table class="table">
   <tr>
     <td></td>
