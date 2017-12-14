@@ -87,7 +87,7 @@ body {
 }
 
 /*table - image size*/
-.table .image-frame {
+.table .admin-index-image-frame {
   max-width: 150px;
 }
 
@@ -158,4 +158,34 @@ body {
 
 .form-horizontal .form-btn-style:hover{
   background-color: #FF5533;
+}
+
+/*guest index page*/
+.restaurant-item {
+  border: 1px solid #ddd;
+  border-radius :4px;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+
+.restaurant-item img {
+  max-height: 180px;
+}
+
+
+.restaurant-item .caption {
+  padding: 10px;
+}
+
+.restaurant-item .caption h3 a{
+  text-decoration: none;
+  color: #777777;
+}
+
+.restaurant-item .caption h3 a:hover{
+  color: #BBBBBB;
+}
+
+.restaurant-item .caption .my-label{
+  background-color: #FF6347;
 }

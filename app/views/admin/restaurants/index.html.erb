@@ -14,7 +14,7 @@
   </tr>
   <% @restaurants.each do |restaurant| %>
   <tr>
-    <td><div class="image-frame"><%= image_tag restaurant.image, width: "100%" %></div></td>
+    <td><div class="admin-index-image-frame"><%= image_tag restaurant.image, width: "100%" %></div></td>
     <td><p class=res-category><%= restaurant.category.name %></p></td>
     <td><p class="res-name"><%= restaurant.name %></p></td>
     <td><%= link_to '瀏覽', admin_restaurant_path(restaurant),
