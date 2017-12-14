@@ -1,0 +1,46 @@
+<h1 class="show-title"><%= @restaurant.name %></h1>
+<h4 class="show-subtitle"><%= @restaurant.category.name %></h4>
+
+<div class="well">
+  <div class="row">
+    <div class="col-xs-5 col-md-6">
+      <h3 class="show-content-title">Tel</h3>
+    </div>
+    <div class="show-content-detail col-xs-7  col-md-6">
+      <p><%= @restaurant.tel %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-5 col-md-6">
+      <h3 class="show-content-title">Address</h3>
+    </div>
+    <div class="show-content-detail col-xs-7 col-md-6">
+      <p><%= @restaurant.address %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-5 col-md-6">
+      <h3 class="show-content-title">Opening Hours</h3>
+    </div>
+    <div class="show-content-detail col-xs-7 col-md-6">
+      <p><%= @restaurant.opening_hours %></p>
+    </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-10">
+      <p class="lead"><%= @restaurant.description %></p>
+    </div>
+  </div>
+  <div>
+    <div class="show-image-frame"><%= image_tag @restaurant.image,
+    width: '100%' %></div>
+  </div>
+<br />
+<%= link_to admin_restaurant_path(@restaurant),
+method: :delete, data: { confirm: "Are you sure?"}, class: "show-icon btn btn-default pull-right" do %>
+  <span class="glyphicon glyphicon-trash"></span>
+<% end %>
+<%= link_to edit_admin_restaurant_path(@restaurant), class: "show-icon btn btn-default pull-right" do %>
+  <span class="glyphicon glyphicon-pencil"></span>
+<% end %>
