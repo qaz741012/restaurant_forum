@@ -198,3 +198,12 @@ body {
   float: none;
   display: inline-block;
 }
+
+.nav.nav-pills.nav-pills-center li a {
+  color: #FF6347;
+}
+
+.nav.nav-pills.nav-pills-center .active a {
+   background-color: #FF6347;
+   color: white;
+}
