@@ -189,3 +189,12 @@ body {
 .restaurant-item .caption .my-label{
   background-color: #FF6347;
 }
+
+.nav.nav-pills.nav-pills-center {
+  text-align: center;
+}
+
+.nav.nav-pills.nav-pills-center li {
+  float: none;
+  display: inline-block;
+}
