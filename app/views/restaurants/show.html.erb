@@ -44,3 +44,9 @@ method: :delete, data: { confirm: "Are you sure?"}, class: "show-icon btn btn-de
 <%= link_to edit_admin_restaurant_path(@restaurant), class: "show-icon btn btn-default pull-right" do %>
   <span class="glyphicon glyphicon-pencil"></span>
 <% end %>
+
+<%= form_for [@restaurant, @comment] do |f| %>
+  <%= f.text_area :content, placeholder: "留個言吧" %>
+  <%= f.submit %>
+  <%= f.button "Cancel", type: :reset %>
+<% end %>
