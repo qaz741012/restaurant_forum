@@ -49,6 +49,7 @@ method: :delete, data: { confirm: "Are you sure?"}, class: "show-icon btn btn-de
   <% if comment.created_at %>  <!--make sure that it can render restaurants/show
     when the content of comment is empty-->
     <h4><%= comment.user.email.split("@")[0] %></h4>
+    <%= comment.score %>
     <%= simple_format comment.content %>
     <p><%= time_ago_in_words(comment.created_at) %></p>
     <% if current_user.admin? %>
@@ -61,6 +62,11 @@ method: :delete, data: { confirm: "Are you sure?"}, class: "show-icon btn btn-de
 
 <%= form_for [@restaurant, @comment] do |f| %>
   <%= f.text_area :content, placeholder: "留個言吧" %>
+  <%= f.radio_button :score, 1 %>
+  <%= f.radio_button :score, 2 %>
+  <%= f.radio_button :score, 3 %>
+  <%= f.radio_button :score, 4 %>
+  <%= f.radio_button :score, 5 %>
   <%= f.submit %>
   <%= f.button "Cancel", type: :reset %>
 <% end %>
