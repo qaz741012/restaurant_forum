@@ -49,22 +49,46 @@
     <% end %>
   </div>
 <% end %>
+<br>
 <hr>
 
-<% @restaurant.comments.each do |comment| %>
-  <% if comment.created_at %>  <!--make sure that it can render restaurants/show
-    when the content of comment is empty-->
-    <h4><%= comment.user.email.split("@")[0] %></h4>
-    <%= comment.score %>
-    <%= simple_format comment.content %>
-    <p><%= time_ago_in_words(comment.created_at) %></p>
-    <% if current_user.admin? %>
-      <%= link_to "Delete", restaurant_comment_path(@restaurant, comment),
-      method: :delete, data: { confirm: "Are you sure?"} %>
-    <% end %>
-    <hr>
+<div class="comment-area container-fluid">
+  <% num = 1 %>
+  <% @restaurant.comments.each do |comment| %>
+    <div class="well">
+      <% if comment.created_at %>  <!--make sure that it can render restaurants/show
+        when the content of comment is empty-->
+        <h4><%= comment.user.email.split("@")[0] %></h4>
+        <div class="comment-time"><p><%= time_ago_in_words(comment.created_at) %></p></div>
+        <div class="comment-tag"><%= "# #{num}" %></div>
+        <div class="seperate"></div>
+        <div class="comment-score comment-score<%= comment.score %>">
+          <span class="glyphicon glyphicon-heart heart1"></span>
+          <span class="glyphicon glyphicon-heart heart2"></span>
+          <span class="glyphicon glyphicon-heart heart3"></span>
+          <span class="glyphicon glyphicon-heart heart4"></span>
+          <span class="glyphicon glyphicon-heart heart5"></span>
+        </div>
+        <br>
+        <div class="comment-content">
+          <p><%= simple_format comment.content %></p>
+        </div>
+        <% if current_user.admin? %>
+          <div class="comment-delete">
+            <%= link_to restaurant_comment_path(@restaurant, comment),
+            method: :delete, data: { confirm: "Are you sure?"},
+            class: "comment-delete-icon" do %>
+              <span class="glyphicon glyphicon-trash"></span>
+            <% end %>
+          </div>
+        <% end %>
+        <% num += 1 %>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
+</div>
+
+<div class="seperate"></div>
 
 <div class="comment-form container-fluid">
   <%= form_for [@restaurant, @comment] do |f| %>
