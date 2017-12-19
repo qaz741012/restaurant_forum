@@ -9,7 +9,8 @@ namespace :dev do
       tel: FFaker::PhoneNumber.short_phone_number,
       address: FFaker::Address.street_address,
       description: FFaker::Lorem.paragraph,
-      category: Category.all.sample)
+      category: Category.all.sample,
+      image: "http://fakeimg.pl/270x180/ff0000/")
     end
     puts "Finished!"
     puts "Now you have #{Restaurant.count} restaurants"
