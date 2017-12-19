@@ -202,8 +202,25 @@ body {
   color: #BBBBBB;
 }
 
+.restaurant-item .caption .index-score{
+  float: right;
+  height: 15px;
+}
+
+.restaurant-item .caption .index-score > *{
+  display: inline-block;
+}
+
+.restaurant-item .caption .index-heart{
+  color: #FF6347;
+}
+
 .restaurant-item .caption .my-label{
   background-color: #FF6347;
+}
+
+.restaurant-item .caption .truncated-description {
+  margin-top: 5px;
 }
 
 .nav.nav-pills.nav-pills-center {

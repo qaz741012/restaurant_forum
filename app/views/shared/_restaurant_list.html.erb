@@ -5,8 +5,18 @@
         <%= image_tag restaurant.image, class: "img-responsive center-block" %>
         <div class="caption">
           <h3 class="text-center"><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
-          <p class="label label-default my-label"><%= restaurant.category.name %></p>
-          <p><%= truncate(restaurant.description, length: 80) %></p>
+          <div>
+            <% if average_score(restaurant) > 0 %>
+              <div class="index-score">
+                <span class="glyphicon glyphicon-heart index-heart"></span>
+                <p><%= average_score(restaurant) %></p>
+              </div>
+            <% end %>
+            <p class="label label-default my-label"><%= restaurant.category.name %></p>
+          </div>
+          <div class="truncated-description">
+            <p><%= truncate(restaurant.description, length: 70) %></p>
+          </div>
         </div>
       </div>
     </div>
