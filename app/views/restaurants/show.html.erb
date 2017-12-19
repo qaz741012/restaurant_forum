@@ -60,16 +60,26 @@ method: :delete, data: { confirm: "Are you sure?"}, class: "show-icon btn btn-de
   <% end %>
 <% end %>
 
-<%= form_for [@restaurant, @comment] do |f| %>
-  <%= f.text_area :content, placeholder: "留個言吧" %>
-  <%= f.radio_button :score, 1 %>
-  <%= f.radio_button :score, 2 %>
-  <%= f.radio_button :score, 3 %>
-  <%= f.radio_button :score, 4 %>
-  <%= f.radio_button :score, 5 %>
-  <%= f.submit %>
-  <%= f.button "Cancel", type: :reset %>
-<% end %>
+<div class="comment-form container-fluid">
+  <%= form_for [@restaurant, @comment] do |f| %>
+    <div class="row">
+      <div class="col-xs-12 col-md-8">
+        <%= f.text_area :content, placeholder: "留個言吧" %>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <%= f.radio_button :score, 1 %>
+        <%= f.radio_button :score, 2 %>
+        <%= f.radio_button :score, 3 %>
+        <%= f.radio_button :score, 4 %>
+        <%= f.radio_button :score, 5 %>
+      </div>
+      <div class="col-xs-6 col-md-12">
+        <%= f.submit %>
+        <%= f.button "Cancel", type: :reset %>
+      </div>
+    </div>
+  <% end %>
+</div>
 <% if @comment.errors.any? %>
   <%= @comment.errors.full_messages.to_sentence %>
 <% end %>
