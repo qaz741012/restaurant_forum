@@ -37,15 +37,18 @@
     width: '100%' %></div>
   </div>
 <br />
-<div class="pull-right">
-  <%= link_to admin_restaurant_path(@restaurant),
-  method: :delete, data: { confirm: "Are you sure?"}, class: "show-icon btn btn-default" do %>
-    <span class="glyphicon glyphicon-trash"></span>
-  <% end %>
-  <%= link_to edit_admin_restaurant_path(@restaurant), class: "show-icon btn btn-default" do %>
-    <span class="glyphicon glyphicon-pencil"></span>
+
+<% if current_user.admin? %>
+  <div class="pull-right">
+    <%= link_to edit_admin_restaurant_path(@restaurant), class: "show-icon btn btn-default" do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+      <% end %>
+    <%= link_to admin_restaurant_path(@restaurant),
+      method: :delete, data: { confirm: "Are you sure?"}, class: "show-icon btn btn-default" do %>
+      <span class="glyphicon glyphicon-trash"></span>
+    <% end %>
+  </div>
 <% end %>
-</div>
 <hr>
 
 <% @restaurant.comments.each do |comment| %>
