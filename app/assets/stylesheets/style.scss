@@ -208,7 +208,100 @@ body {
    color: white;
 }
 
-/*guest show page*/
+/*score*/
 .comment-form form textarea {
   resize: none;
+  width: 100%;
+}
+
+.score {
+  position: relative;
+}
+
+.score input {
+  opacity: 0;
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+}
+
+.score .score1, .heart1{
+  position: absolute;
+  top: 0px;
+  left: 5px;
+}
+
+.score .score2, .heart2{
+  position: absolute;
+  top: 0px;
+  left: 35px;
+}
+
+.score .score3, .heart3{
+  position: absolute;
+  top: 0px;
+  left: 65px;
+}
+
+.score .score4, .heart4{
+  position: absolute;
+  top: 0px;
+  left: 95px;
+}
+
+.score .score5, .heart5{
+  position: absolute;
+  top: 0px;
+  left: 125px;
+}
+
+.score span {
+  font-size: 25px;
+  z-index: 1;
+  position: absolute;
+  top: 5px;
+}
+
+.score .score5:checked ~span{
+  color: #FF6347;
+}
+
+.score .score4:checked ~ .heart1{
+  color: #FF6347;
+}
+
+.score .score4:checked ~ .heart2{
+  color: #FF6347;
+}
+
+.score .score4:checked ~ .heart3{
+  color: #FF6347;
+}
+
+.score .score4:checked ~ .heart4{
+  color: #FF6347;
+}
+
+.score .score3:checked ~ .heart1{
+  color: #FF6347;
+}
+
+.score .score3:checked ~ .heart2{
+  color: #FF6347;
+}
+
+.score .score3:checked ~ .heart3{
+  color: #FF6347;
+}
+
+.score .score2:checked ~ .heart1{
+  color: #FF6347;
+}
+
+.score .score2:checked ~ .heart2{
+  color: #FF6347;
+}
+
+.score .score1:checked ~ .heart1{
+  color: #FF6347;
 }

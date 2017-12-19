@@ -37,13 +37,16 @@
     width: '100%' %></div>
   </div>
 <br />
-<%= link_to admin_restaurant_path(@restaurant),
-method: :delete, data: { confirm: "Are you sure?"}, class: "show-icon btn btn-default pull-right" do %>
-  <span class="glyphicon glyphicon-trash"></span>
+<div class="pull-right">
+  <%= link_to admin_restaurant_path(@restaurant),
+  method: :delete, data: { confirm: "Are you sure?"}, class: "show-icon btn btn-default" do %>
+    <span class="glyphicon glyphicon-trash"></span>
+  <% end %>
+  <%= link_to edit_admin_restaurant_path(@restaurant), class: "show-icon btn btn-default" do %>
+    <span class="glyphicon glyphicon-pencil"></span>
 <% end %>
-<%= link_to edit_admin_restaurant_path(@restaurant), class: "show-icon btn btn-default pull-right" do %>
-  <span class="glyphicon glyphicon-pencil"></span>
-<% end %>
+</div>
+<hr>
 
 <% @restaurant.comments.each do |comment| %>
   <% if comment.created_at %>  <!--make sure that it can render restaurants/show
@@ -63,19 +66,26 @@ method: :delete, data: { confirm: "Are you sure?"}, class: "show-icon btn btn-de
 <div class="comment-form container-fluid">
   <%= form_for [@restaurant, @comment] do |f| %>
     <div class="row">
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-12 col-sm-6">
         <%= f.text_area :content, placeholder: "留個言吧" %>
       </div>
-      <div class="col-xs-6 col-md-4">
-        <%= f.radio_button :score, 1 %>
-        <%= f.radio_button :score, 2 %>
-        <%= f.radio_button :score, 3 %>
-        <%= f.radio_button :score, 4 %>
-        <%= f.radio_button :score, 5 %>
+      <div class="col-xs-6 col-sm-6">
+        <div class="score">
+          <%= f.radio_button :score, 1, {class: "score1"} %>
+          <%= f.radio_button :score, 2, {class: "score2"} %>
+          <%= f.radio_button :score, 3, {class: "score3"} %>
+          <%= f.radio_button :score, 4, {class: "score4"} %>
+          <%= f.radio_button :score, 5, {class: "score5"} %>
+          <span class="glyphicon glyphicon-heart heart1"></span>
+          <span class="glyphicon glyphicon-heart heart2"></span>
+          <span class="glyphicon glyphicon-heart heart3"></span>
+          <span class="glyphicon glyphicon-heart heart4"></span>
+          <span class="glyphicon glyphicon-heart heart5"></span>
+        </div>
       </div>
-      <div class="col-xs-6 col-md-12">
-        <%= f.submit %>
-        <%= f.button "Cancel", type: :reset %>
+      <div class="col-xs-6 col-sm-12">
+        <%= f.submit class: "btn btn-default" %>
+        <%= f.button "Cancel", type: :reset, class: "btn btn-default"%>
       </div>
     </div>
   <% end %>
