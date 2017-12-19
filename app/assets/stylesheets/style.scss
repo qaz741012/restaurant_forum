@@ -107,6 +107,22 @@ body {
   color: #777777;
 }
 
+.title-score {
+  width: 100px;
+  float:right;
+  margin-top: 40px;
+}
+
+.title-score > * {
+  display: inline-block;
+  font-size: 20px;
+  color: #FF6347;
+}
+
+.title-score > p {
+  color: #777777;
+}
+
 .well {
   background-color: #FFFFBB;
 }
