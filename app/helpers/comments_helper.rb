@@ -5,7 +5,7 @@ module CommentsHelper
       restaurant.comments.each do |comment|
         sum += comment.score
       end
-      sum.to_f / restaurant.comments.size
+      (sum.to_f / restaurant.comments.size).round(1)
     else
       0
     end
