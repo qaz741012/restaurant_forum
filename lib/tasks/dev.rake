@@ -25,7 +25,7 @@ namespace :dev do
 
     20.times do |i|
       User.create!(email: FFaker::InternetSE.free_email,
-      password: "123456")
+      password: "123456", name: FFaker::Name.first_name)
     end
     puts "Finished!"
     puts "Now you have #{User.count} public users"
