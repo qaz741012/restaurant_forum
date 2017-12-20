@@ -48,6 +48,9 @@
               <button type="button" class="btn btn-default navbar-btn">
                 <%= link_to('修改密碼', edit_user_registration_path, class: "navbar-btn") %>
               </button>
+              <button type="button" class="btn btn-default navbar-btn">
+                <%= link_to('Profile', user_path(current_user), class: "navbar-btn") %>
+              </button>
             <% else %>
             <button type="button" class="btn btn-default navbar-btn">
               <%= link_to('註冊', new_user_registration_path) %>

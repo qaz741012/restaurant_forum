@@ -1,0 +1,16 @@
+<div class="avatar-frame"><%= image_tag @user.avatar, class: "img-responsive" %></div>
+<table>
+  <tr>
+    <td><h3><%= @user.name %></h3></td>
+  </tr>
+  <tr>
+    <td><h5><%= @user.email %></h5></td>
+  </tr>
+  <tr>
+    <td><p><%= @user.intro %></p></td>
+  </tr>
+</table>
+
+<% if current_user == @user %>
+  <%= link_to "Edit Profile", edit_user_path(@user) %>
+<% end %>
