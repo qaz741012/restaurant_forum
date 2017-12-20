@@ -353,7 +353,15 @@ body {
   position: relative;
 }
 
-.comment-area > div > h4 {
+.comment-area > div > a {
+  text-decoration: none;
+}
+
+.comment-area > div > a:hover > h4 {
+  color: #BBBBBB;
+}
+
+.comment-area > div > a > h4 {
   color: #777777;
   font-weight: bold;
   display: inline-block;
