@@ -1,6 +1,8 @@
 <div class="profile-personal-info row">
   <div class="avatar-frame col-sm-3">
-    <%= image_tag @user.avatar, class: "img-responsive img-circle" %>
+    <%= image_tag @user.avatar, class: "img-responsive img-circle" if @user.avatar? %>
+    <%= image_tag "https://cdn.unwire.hk/wp-content/uploads/2014/10/facebook-user.jpg",
+     class: "img-responsive img-circle" if !@user.avatar?%>
   </div>
   <div class="col-sm-9">
     <table>
