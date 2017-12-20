@@ -428,7 +428,67 @@ body {
 }
 
 /*profile*/
+.profile-personal-info div {
+  vertical-align: top;
+}
+
 .avatar-frame {
-  max-width: 300px;
-  float: left;
+  max-width: 200px;
+
+}
+
+.avatar-frame ~ div {
+
+}
+
+.my-panel-heading.panel-heading {
+  background-color: #FFFFBB;
+}
+
+.my-panel-heading.panel-heading .panel-title {
+  text-align: center;
+  font-weight: 700;
+}
+
+.my-restaurant-link a {
+  text-decoration: none;
+  color: #777777;
+}
+
+.my-restaurant-link a:hover .my-restaurant{
+  opacity: 0.7;
+  background-color: #EEEEEE;
+}
+
+.my-restaurant {
+  display: inline-block;
+}
+
+.my-restaurant-img-frame img {
+  border-radius: 10px;
+}
+
+.my-restaurant-img-frame {
+  height: 100px;
+}
+
+.my-restaurant h4 {
+  font-weight: bold;
+}
+
+
+/*RWD*/
+@media (max-width: 767px) {
+  .avatar-frame {
+    margin: auto;
+  }
+
+  .avatar-frame ~ div table {
+    margin: auto;
+  }
+
+  .profile-edit {
+    float: right;
+  }
+
 }

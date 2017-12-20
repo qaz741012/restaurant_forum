@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user
 
+  def show
+    @commented_restaurants = @user.restaurants.uniq
+  end
+
   def edit
     if current_user != @user
       flash[:alert] = "You are not allow to edit the profile"
