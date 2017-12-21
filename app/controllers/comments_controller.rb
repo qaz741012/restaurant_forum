@@ -8,8 +8,8 @@ class CommentsController < ApplicationController
       flash[:notice] = "comment was successfully created"
       redirect_to restaurant_path(@restaurant)
     else
-      flash.now[:alert] = "comment was failed to created"
-      render "restaurants/show"
+      flash[:alert] = "comment and score cannot be blank"
+      redirect_to restaurant_path(@restaurant, comment_params)
     end
   end
 
