@@ -42,22 +42,22 @@
           <div class="nav navbar-nav navbar-right">
             <% if current_user %>
               Hi, <%= current_user.email %>
-              <button type="button" class="btn btn-default navbar-btn">
-                <%= link_to('登出', destroy_user_session_path, method: :delete) %>
-              </button>
-              <button type="button" class="btn btn-default navbar-btn">
-                <%= link_to('修改密碼', edit_user_registration_path, class: "navbar-btn") %>
-              </button>
-              <button type="button" class="btn btn-default navbar-btn">
-                <%= link_to('Profile', user_path(current_user), class: "navbar-btn") %>
-              </button>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <button type="button" class="btn btn-default navbar-btn">登出</button>
+              <% end %>
+              <%= link_to edit_user_registration_path do %>
+                <button type="button" class="btn btn-default navbar-btn">修改密碼</button>
+              <% end %>
+              <%= link_to user_path(current_user) do %>
+                <button type="button" class="btn btn-default navbar-btn">Profile</button>
+              <% end %>
             <% else %>
-            <button type="button" class="btn btn-default navbar-btn">
-              <%= link_to('註冊', new_user_registration_path) %>
-            </button>
-            <button type="button" class="btn btn-default navbar-btn">
-              <%= link_to('登入', new_user_session_path) %>
-            </button>
+              <%= link_to new_user_registration_path do %>
+                <button type="button" class="btn btn-default navbar-btn">註冊</button>
+              <% end %>
+              <%= link_to new_user_session_path do %>
+                <button type="button" class="btn btn-default navbar-btn">登入</button>
+              <% end %>
             <% end %>
           </div>
         </div><!-- /.navbar-collapse -->

@@ -20,18 +20,18 @@ body {
   font-weight: 800;
 }
 
-.nav.navbar-nav.navbar-right > button{
+.nav.navbar-nav.navbar-right > a > button {
   background-color: #FFFFBB;
   border-color: black;
 }
 
-.nav.navbar-nav.navbar-right > button > a {
+.nav.navbar-nav.navbar-right > a > button {
   text-decoration: none;
   color: #333333;
   font-weight: bold;
 }
 
-.nav.navbar-nav.navbar-right > button > a:hover {
+.nav.navbar-nav.navbar-right > a:hover button {
   color: #666666;
 }
 
