@@ -31,8 +31,9 @@
     <div class="show-content-detail col-xs-7 col-md-6">
       <p><%= @restaurant.opening_hours %></p>
     </div>
-    </div>
   </div>
+  <div><%= link_to "Dashboard", dashboard_restaurant_path(@restaurant) %></div>
+</div>
   <div class="row">
     <div class="col-xs-offset-1 col-xs-10">
       <p class="lead"><%= @restaurant.description %></p>
