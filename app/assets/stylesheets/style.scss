@@ -147,6 +147,16 @@ body {
   font-size: 20px;
 }
 
+.show-more-details a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #777777;
+}
+
+.show-more-details a:hover {
+  color: #BBBBBB;
+}
+
 /*form page*/
 .description-size {
   resize: none;
