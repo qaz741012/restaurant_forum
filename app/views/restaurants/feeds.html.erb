@@ -4,26 +4,36 @@
     <li role="presentation"><%= link_to "首頁", restaurants_path %></li>
     <li role="presentation" class="active"><%= link_to "最新動態", feeds_restaurants_path %></li>
   </ul>
+  <br>
 
-  <h1>餐廳動態資料</h1>
+  <div class="row">
+    <div class="panel panel-default col-sm-6">
+      <div class="panel-heading">
+        <div class="panel-title"><h3>最新餐廳</h3></div>
+      </div>
+      <div class="panel-body">
+        <% @recent_restaurants.each do |restaurant| %>
+          <h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
+          <p><%= restaurant.category.name %></p>
+          <p><%= restaurant.description %></p>
+          <hr>
+        <% end %>
+      </div>
+    </div>
 
-  <h3>最新餐廳</h3>
-  <div>
-    <% @recent_restaurants.each do |restaurant| %>
-      <h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
-      <p><%= restaurant.category.name %></p>
-      <p><%= restaurant.description %></p>
-    <% end %>
-  </div>
-
-
-  <h3>最新評論</h3>
-  <div>
-    <% @recent_comments.each do |comment| %>
-      <h4><%= link_to comment.restaurant.name, restaurant_path(comment.restaurant) %></h4>
-      <p><%= comment.content %></p>
-      <p>by <%= link_to comment.user.name, user_path(comment.user) %></p>
-    <% end %>
+    <div class="panel panel-default col-sm-6">
+      <div class="panel-heading">
+        <div class="panel-title"><h3>最新評論</h3></div>
+      </div>
+      <div class="panel-body">
+        <% @recent_comments.each do |comment| %>
+          <h4><%= link_to comment.restaurant.name, restaurant_path(comment.restaurant) %></h4>
+          <p><%= comment.content %></p>
+          <p>by <%= link_to comment.user.name, user_path(comment.user) %></p>
+          <hr>
+        <% end %>
+      </div>
+    </div>
   </div>
 
 </div>
