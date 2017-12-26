@@ -8,13 +8,13 @@
 
   <div class="row">
     <div class="panel panel-default col-sm-6">
-      <div class="panel-heading">
+      <div class="panel-heading my-panel-heading">
         <div class="panel-title"><h3>最新餐廳</h3></div>
       </div>
-      <div class="panel-body">
+      <div class="panel-body feeds-restaurants-panel-body">
         <% @recent_restaurants.each do |restaurant| %>
-          <h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
-          <p><%= restaurant.category.name %></p>
+          <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+          <p class="label label-default my-label"><%= restaurant.category.name %></p>
           <p><%= restaurant.description %></p>
           <hr>
         <% end %>
@@ -22,14 +22,21 @@
     </div>
 
     <div class="panel panel-default col-sm-6">
-      <div class="panel-heading">
+      <div class="panel-heading my-panel-heading">
         <div class="panel-title"><h3>最新評論</h3></div>
       </div>
-      <div class="panel-body">
+      <div class="panel-body feeds-comments-panel-body">
         <% @recent_comments.each do |comment| %>
-          <h4><%= link_to comment.restaurant.name, restaurant_path(comment.restaurant) %></h4>
+          <h3><%= link_to comment.restaurant.name, restaurant_path(comment.restaurant) %></h3>
+          <div class="feeds-comment-score comment-score<%= comment.score %>">
+            <span class="glyphicon glyphicon-heart heart1"></span>
+            <span class="glyphicon glyphicon-heart heart2"></span>
+            <span class="glyphicon glyphicon-heart heart3"></span>
+            <span class="glyphicon glyphicon-heart heart4"></span>
+            <span class="glyphicon glyphicon-heart heart5"></span>
+          </div>
           <p><%= comment.content %></p>
-          <p>by <%= link_to comment.user.name, user_path(comment.user) %></p>
+          <p class="user-name">by <%= link_to comment.user.name, user_path(comment.user) %></p>
           <hr>
         <% end %>
       </div>

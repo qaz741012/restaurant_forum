@@ -242,6 +242,15 @@ body {
    color: white;
 }
 
+.nav.nav-tabs.my-tabs li a {
+  color: #777777;
+}
+
+.nav.nav-tabs.my-tabs .active a {
+  color: white;
+  background-color: #BBBBBB;
+}
+
 /*score*/
 .comment-form form textarea {
   resize: none;
@@ -480,6 +489,51 @@ body {
   font-weight: bold;
 }
 
+/*feeds*/
+.feeds-restaurants-panel-body h3 {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.feeds-restaurants-panel-body h3 a {
+  text-decoration: none;
+  color: #777777;
+}
+
+.feeds-restaurants-panel-body h3 a:hover {
+  color: #BBBBBB;
+}
+
+.feeds-restaurants-panel-body .my-label {
+  background-color: #FF6347;
+}
+
+.feeds-comments-panel-body h3 a {
+  text-decoration: none;
+  color: #777777;
+}
+
+.feeds-comments-panel-body h3 a:hover {
+  color: #BBBBBB;
+}
+
+.feeds-comments-panel-body .user-name {
+  text-align: right;
+}
+
+.feeds-comments-panel-body .user-name a {
+  text-decoration: none;
+  color: #777777;
+}
+
+.feeds-comments-panel-body .user-name a:hover {
+  color: #BBBBBB;
+}
+
+.feeds-comment-score {
+  color: white;
+  text-shadow: #222222 0px 0px 1px;
+}
 
 /*RWD*/
 @media (max-width: 767px) {
