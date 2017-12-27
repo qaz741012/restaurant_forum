@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update]
 
+  resources :likes, only: [:create, :destroy]
+
   namespace :admin do
     resources :restaurants
     resources :categories
