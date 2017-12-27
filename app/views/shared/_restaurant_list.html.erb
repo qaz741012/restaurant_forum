@@ -21,6 +21,7 @@
           <div class="truncated-description">
             <p><%= truncate(restaurant.description, length: 70) %></p>
           </div>
+          <%= render partial: "shared/favorite", locals: {restaurant: restaurant} %>
         </div>
       </div>
     </div>
