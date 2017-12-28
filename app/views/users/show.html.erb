@@ -27,26 +27,52 @@
 
 <br>
 
-<div class="panel panel-default">
-  <div class="panel-heading  my-panel-heading">
-    <h4 class="panel-title"><%= "#{@commented_restaurants.size} 家已評論的餐廳" %></h4>
-  </div>
-  <div class="panel-body my-restaurant-link">
-    <% @commented_restaurants.each do |restaurant| %>
-      <%= link_to restaurant_path(restaurant) do %>
-        <div class="my-restaurant">
-          <div class="my-restaurant-img-frame">
-            <% if restaurant.image? %>
-              <%= image_tag restaurant.image, class: "center-block",
-              height: "100%" %>
-            <% else %>
-              <%= image_tag "http://fakeimg.pl/270x180/BBBBBB/", class: "centet-block",
-              height: "100%" %>
-            <% end %>
+<div class="row">
+  <div class="panel panel-default col-sm-6">
+    <div class="panel-heading  my-panel-heading">
+      <h4 class="panel-title"><%= "#{@commented_restaurants.size} 家已評論的餐廳" %></h4>
+    </div>
+    <div class="panel-body my-restaurant-link">
+      <% @commented_restaurants.each do |restaurant| %>
+        <%= link_to restaurant_path(restaurant) do %>
+          <div class="my-restaurant">
+            <div class="my-restaurant-img-frame">
+              <% if restaurant.image? %>
+                <%= image_tag restaurant.image, class: "center-block",
+                height: "100%" %>
+              <% else %>
+                <%= image_tag "http://fakeimg.pl/270x180/BBBBBB/", class: "centet-block",
+                height: "100%" %>
+              <% end %>
+            </div>
+            <h4 class="text-center"><%= restaurant.name %></h4>
           </div>
-          <h4 class="text-center"><%= restaurant.name %></h4>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-</div>
+    </div>
+  </div>
+
+  <div class="panel panel-default col-sm-6">
+    <div class="panel-heading  my-panel-heading">
+      <h4 class="panel-title"><%= "#{@favorited_restaurants.size} 家已收藏的餐廳" %></h4>
+    </div>
+    <div class="panel-body my-restaurant-link">
+      <% @favorited_restaurants.each do |restaurant| %>
+        <%= link_to restaurant_path(restaurant) do %>
+          <div class="my-restaurant">
+            <div class="my-restaurant-img-frame">
+              <% if restaurant.image? %>
+                <%= image_tag restaurant.image, class: "center-block",
+                height: "100%" %>
+              <% else %>
+                <%= image_tag "http://fakeimg.pl/270x180/BBBBBB/", class: "centet-block",
+                height: "100%" %>
+              <% end %>
+            </div>
+            <h4 class="text-center"><%= restaurant.name %></h4>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
