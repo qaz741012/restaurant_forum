@@ -1,5 +1,5 @@
 
-/* color of pagination */
+/**************** color of pagination ****************/
 .pagination.my_pag > li.active > a {
   background-color: #FF6347;
   border-color: #FF6347;
@@ -10,7 +10,7 @@
   color: #FF6347;
 }
 
-/*navbar - log in/out*/
+/****************navbar - log in/out****************/
 body {
   padding-top: 70px;
 }
@@ -40,12 +40,12 @@ body {
   background-color: #FFFFBB;
 }
 
-/*navbar - collapse - pull-right*/
+/****************navbar - collapse - pull-right****************/
 .nav.navbar-nav.navbar-right {
   text-align: right;
 }
 
-/*navbar - glyphicon - user & admin*/
+/****************navbar - glyphicon - user & admin****************/
 .navbar-header .glyphicon {
   font-size: 30px;
   margin-top: 10px;
@@ -53,7 +53,7 @@ body {
   margin-left: 10px;
 }
 
-/*navbar - title*/
+/****************navbar - title****************/
 .res-title {
   color: #EEEEEE;
   display: inline-block;
@@ -63,7 +63,7 @@ body {
   margin-left: 10px;
 }
 
-/*table - name, show, edit, destroy*/
+/****************table - name, show, edit, destroy****************/
 .table td > a.btn {
   background-color: #FFFFBB;
 }
@@ -87,17 +87,17 @@ body {
   font-size: 20px;
 }
 
-/*table - image size*/
+/****************table - image size****************/
 .table .admin-index-image-frame {
   max-width: 150px;
 }
 
-/*web page title*/
+/****************web page title****************/
 .index-title, .show-title, .edit-title, .new-title {
   color: #777777;
 }
 
-/*show page*/
+/****************show page****************/
 .show-title {
   display: inline-block;
 }
@@ -157,7 +157,7 @@ body {
   color: #BBBBBB;
 }
 
-/*form page*/
+/****************form page****************/
 .description-size {
   resize: none;
 }
@@ -187,7 +187,7 @@ body {
   background-color: #FF5533;
 }
 
-/*guest index page*/
+/****************guest index page****************/
 .restaurant-item {
   border: 1px solid #ddd;
   border-radius :4px;
@@ -226,7 +226,7 @@ body {
   color: #FF6347;
 }
 
-.restaurant-item .caption .my-label{
+.my-label{
   background-color: #FF6347;
 }
 
@@ -261,7 +261,7 @@ body {
   background-color: #BBBBBB;
 }
 
-/*score*/
+/****************score****************/
 .comment-form form textarea {
   resize: none;
   width: 100%;
@@ -361,7 +361,7 @@ body {
   color: #FF6347;
 }
 
-/*comments*/
+/****************comments****************/
 .seperate {
   background-color: #FF6347;
   height: 3px;
@@ -455,7 +455,7 @@ body {
   color: #333333;
 }
 
-/*profile*/
+/****************profile****************/
 .profile-personal-info div {
   vertical-align: top;
 }
@@ -499,7 +499,7 @@ body {
   font-weight: bold;
 }
 
-/*feeds*/
+/****************feeds****************/
 .feeds-restaurants-panel-body h3 {
   display: inline-block;
   margin-right: 10px;
@@ -514,7 +514,7 @@ body {
   color: #BBBBBB;
 }
 
-.feeds-restaurants-panel-body .my-label {
+.my-label {
   background-color: #FF6347;
 }
 
@@ -544,6 +544,38 @@ body {
   color: white;
   text-shadow: #222222 0px 0px 1px;
 }
+
+/****************ranking****************/
+.ranking-panel-body h3 a {
+  text-decoration: none;
+  color: #777777;
+}
+
+.ranking-panel-body h3 a:hover {
+  color: #BBBBBB;
+}
+
+.ranking-panel-body h3 {
+  display: inline-block;
+}
+
+.ranking-panel-body .my-label {
+  display: inline-block;
+}
+
+.favorites_count_label {
+  display: inline-block;
+}
+
+/****************favorite****************/
+.favorite-icon {
+
+}
+
+.unfavorite-icon {
+  
+}
+
 
 /*RWD*/
 @media (max-width: 767px) {

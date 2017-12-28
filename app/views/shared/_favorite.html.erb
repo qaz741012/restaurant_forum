@@ -1,7 +1,11 @@
 <% if !restaurant.is_favorited?(current_user) %>
-  <%= link_to "Favorite", favorite_restaurant_path(restaurant),
-  method: :post, class: "btn btn-primary" %>
+  <%= link_to favorite_restaurant_path(restaurant), method: :post,
+  title: "adding to favorite list" do %>
+    <span class="glyphicon glyphicon-star favorite-icon"></span>
+  <% end %>
 <% else %>
-  <%= link_to "Unfavorite", unfavorite_restaurant_path(restaurant),
-  method: :post, class: "btn btn-info" %>
+  <%= link_to "Unfavorite", unfavorite_restaurant_path(restaurant), method: :post,
+  title: "cancel from favorite list" do %>
+    <span class="glyphicon glyphicon-star unfavorite-icon"></span>
+  <% end %>
 <% end %>

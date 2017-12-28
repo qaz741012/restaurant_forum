@@ -5,16 +5,17 @@
     <li role="presentation"><%= link_to "最新動態", feeds_restaurants_path %></li>
     <li role="presentation" class="active"><%= link_to "Top10人氣餐廳", ranking_restaurants_path %></li>
   </ul>
+  <br>
 
   <div class="panel panel-default">
-    <div class="panel-heading">
+    <div class="panel-heading my-panel-heading">
       <div class="panel-title"><h3>Top 10 人氣餐廳</h3></div>
     </div>
-    <div class="panel-body">
+    <div class="panel-body ranking-panel-body">
       <% @top10_restaurants.each do |restaurant| %>
         <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
-        <p class="label label-default">收藏數 <%= restaurant.favorites_count %></p>
         <p class="label label-default my-label"><%= restaurant.category.name %></p>
+        <p class="label label-default favorites_count_label">收藏數 <%= restaurant.favorites_count %></p>
         <p><%= restaurant.description %></p>
         <%= render partial: "shared/favorite", locals: {restaurant: restaurant} %>
         <hr>
