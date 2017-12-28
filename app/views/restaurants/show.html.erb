@@ -1,11 +1,7 @@
 <h1 class="show-title"><%= @restaurant.name %></h1>
 <h4 class="show-subtitle"><%= @restaurant.category.name %></h4>
 <%= render partial: "shared/favorite", locals: {restaurant: @restaurant} %>
-<% if !@restaurant.is_liked?(current_user) %>
-  <%= link_to "Like", likes_path(restaurant_id: @restaurant.id), method: :post, class: "btn btn-primary" %>
-<% else %>
-  <%= link_to "Dislike", like_path(restaurant_id: @restaurant.id), method: :delete, class: "btn btn-info" %>
-<% end %>
+<%= render partial: "shared/like", locals: {restaurant: @restaurant} %>
 <% if average_score(@restaurant) > 0 %>
   <div class="title-score">
     <span class="glyphicon glyphicon-heart title-heart"></span>
