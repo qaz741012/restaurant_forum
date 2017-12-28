@@ -13,11 +13,13 @@
     </div>
     <div class="panel-body ranking-panel-body">
       <% @top10_restaurants.each do |restaurant| %>
+        <%= render partial: "shared/favorite", locals: {restaurant: restaurant} %>
         <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
         <p class="label label-default my-label"><%= restaurant.category.name %></p>
-        <p class="label label-default favorites_count_label">收藏數 <%= restaurant.favorites_count %></p>
+        <p class="label label-default favorites_count_label">
+          <span class="glyphicon glyphicon-star"></span>
+          <%= restaurant.favorites_count %></p>
         <p><%= restaurant.description %></p>
-        <%= render partial: "shared/favorite", locals: {restaurant: restaurant} %>
         <hr>
       <% end %>
     </div>

@@ -567,13 +567,25 @@ body {
   display: inline-block;
 }
 
-/****************favorite****************/
-.favorite-icon {
+.favorites_count_label span {
+  color: yellow;
+}
 
+/****************favorite****************/
+.favorite-link {
+  text-decoration: none;
+}
+
+.favorite-icon {
+  font-size: 20px;
+  color: white;
+  text-shadow: #222222 0px 0px 1px;
 }
 
 .unfavorite-icon {
-  
+  font-size: 20px;
+  color: yellow;
+  text-shadow: #222222 0px 0px 1px;
 }
 
 
