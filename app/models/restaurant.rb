@@ -19,4 +19,8 @@ class Restaurant < ApplicationRecord
     self.liked_users.include?(user)
   end
 
+  def update_favorites_count
+    self.update(favorites_count: self.favorites.count)
+  end
+
 end
