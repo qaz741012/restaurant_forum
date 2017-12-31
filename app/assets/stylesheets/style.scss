@@ -588,6 +588,22 @@ body {
   text-shadow: #222222 0px 0px 1px;
 }
 
+/****************user index****************/
+.user-index-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+}
+
+.user-index-content * {
+  text-align: center;
+}
+
+.user-index-img-frame {
+  width: 120px;
+  height: 120px;
+  margin: auto;
+}
 
 /*RWD*/
 @media (max-width: 767px) {
