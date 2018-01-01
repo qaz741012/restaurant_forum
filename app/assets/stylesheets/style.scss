@@ -24,9 +24,6 @@ body {
 .nav.navbar-nav.navbar-right > a > button {
   background-color: #FFFFBB;
   border-color: black;
-}
-
-.nav.navbar-nav.navbar-right > a > button {
   text-decoration: none;
   color: #333333;
   font-weight: bold;
@@ -603,6 +600,38 @@ body {
   width: 120px;
   height: 120px;
   margin: auto;
+}
+
+.user-index-content h4 a {
+  text-decoration: none;
+  color: #777777;
+}
+
+.user-index-content h4 a:hover {
+  color: #BBBBBB;
+}
+
+.btn-follow, .btn-unfollow {
+  background-color: #FFFFBB;
+  border-color: #777777;
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+}
+
+.btn-follow:hover {
+  background-color: #FFFFBB;
+  color: #666666;
+}
+
+.btn-unfollow {
+  background-color: #FF6347;
+  color: white;
+}
+
+.btn-unfollow:hover {
+  background-color: #FF6347;
+  color: #BBBBBB;
 }
 
 /*RWD*/
