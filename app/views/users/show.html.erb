@@ -15,6 +15,9 @@
       <tr>
         <td><p><%= @user.intro %></p></td>
       </tr>
+      <tr>
+        <td><%= render partial: "shared/follow", locals: {user: @user} %></td>
+      </tr>
     </table>
 
     <% if current_user == @user %>
