@@ -17,7 +17,11 @@
           <td><p><%= @user.intro %></p></td>
         </tr>
         <tr>
-          <td><%= render partial: "shared/follow", locals: {user: @user} %></td>
+          <td>
+            <%= render partial: "shared/follow", locals: {user: @user} %>
+            <%= render partial: "shared/friend", locals: {user: @user} %>
+          </td>
+          <td><%= link_to "我的好友" %></td>
         </tr>
       </table>
 

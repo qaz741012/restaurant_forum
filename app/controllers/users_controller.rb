@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, except: :index
+  before_action :set_user, except: [:index]
 
   def index
     @users = User.all
@@ -22,6 +22,10 @@ class UsersController < ApplicationController
     @user.update(user_params)
     flash[:notice] = "user profile was successfully updated"
     redirect_to user_path(@user)
+  end
+
+  def friend_list
+    
   end
 
   private
