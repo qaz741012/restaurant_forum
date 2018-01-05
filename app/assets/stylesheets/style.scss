@@ -461,6 +461,41 @@ body {
   max-width: 200px;
 }
 
+.user-information-container {
+  display: grid;
+  grid-template-columns: 130px auto;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 10px;
+}
+
+.followings {
+}
+
+.followers {
+}
+
+.commented-restaurants {
+}
+
+.favorited-restaurants {
+}
+
+
+
+.follow-img-frame {
+  width: 80px;
+  margin: auto;
+}
+
+.follow-img-frame ~ h5 a {
+  text-decoration: none;
+  color: #333333;
+}
+
+.follow-img-frame ~ h5 a:hover {
+  color: #777777;
+}
+
 .my-panel-heading.panel-heading {
   background-color: #FFFFBB;
 }

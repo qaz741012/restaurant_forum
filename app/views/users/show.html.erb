@@ -1,81 +1,116 @@
-<div class="profile-personal-info row">
-  <div class="avatar-frame col-sm-3">
-    <%= image_tag @user.avatar, class: "img-responsive img-circle" if @user.avatar? %>
-    <%= image_tag "https://cdn.unwire.hk/wp-content/uploads/2014/10/facebook-user.jpg",
-     class: "img-responsive img-circle" if !@user.avatar?%>
-  </div>
-  <div class="col-sm-9">
-    <table>
-      <tr>
-        <td><h3><%= @user.name %></h3></td>
-      </tr>
-      <tr>
-        <td><h5><b><%= @user.email %></b></h5></td>
-      </tr>
-      <tr>
-        <td><p><%= @user.intro %></p></td>
-      </tr>
-      <tr>
-        <td><%= render partial: "shared/follow", locals: {user: @user} %></td>
-      </tr>
-    </table>
-
-    <% if current_user == @user %>
-      <%= link_to edit_user_path(@user), class: "profile-edit btn btn-default" do %>
-        <span class="glyphicon glyphicon-pencil"></span>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-
-<br>
-
-<div class="row">
-  <div class="panel panel-default col-sm-6">
-    <div class="panel-heading  my-panel-heading">
-      <h4 class="panel-title"><%= "#{@commented_restaurants.size} 家已評論的餐廳" %></h4>
+<div class="container-fluid">
+  <div class="profile-personal-info row">
+    <div class="avatar-frame col-sm-3">
+      <%= image_tag @user.avatar, class: "img-responsive img-circle" if @user.avatar? %>
+      <%= image_tag "https://cdn.unwire.hk/wp-content/uploads/2014/10/facebook-user.jpg",
+       class: "img-responsive img-circle" if !@user.avatar?%>
     </div>
-    <div class="panel-body my-restaurant-link">
-      <% @commented_restaurants.each do |restaurant| %>
-        <%= link_to restaurant_path(restaurant) do %>
-          <div class="my-restaurant">
-            <div class="my-restaurant-img-frame">
-              <% if restaurant.image? %>
-                <%= image_tag restaurant.image, class: "center-block",
-                height: "100%" %>
-              <% else %>
-                <%= image_tag "http://fakeimg.pl/270x180/BBBBBB/", class: "centet-block",
-                height: "100%" %>
-              <% end %>
-            </div>
-            <h4 class="text-center"><%= restaurant.name %></h4>
-          </div>
+    <div class="col-sm-9">
+      <table>
+        <tr>
+          <td><h3><%= @user.name %></h3></td>
+        </tr>
+        <tr>
+          <td><h5><b><%= @user.email %></b></h5></td>
+        </tr>
+        <tr>
+          <td><p><%= @user.intro %></p></td>
+        </tr>
+        <tr>
+          <td><%= render partial: "shared/follow", locals: {user: @user} %></td>
+        </tr>
+      </table>
+
+      <% if current_user == @user %>
+        <%= link_to edit_user_path(@user), class: "profile-edit btn btn-default" do %>
+          <span class="glyphicon glyphicon-pencil"></span>
         <% end %>
       <% end %>
     </div>
   </div>
 
-  <div class="panel panel-default col-sm-6">
-    <div class="panel-heading  my-panel-heading">
-      <h4 class="panel-title"><%= "#{@favorited_restaurants.size} 家已收藏的餐廳" %></h4>
-    </div>
-    <div class="panel-body my-restaurant-link">
-      <% @favorited_restaurants.each do |restaurant| %>
-        <%= link_to restaurant_path(restaurant) do %>
-          <div class="my-restaurant">
-            <div class="my-restaurant-img-frame">
-              <% if restaurant.image? %>
-                <%= image_tag restaurant.image, class: "center-block",
-                height: "100%" %>
-              <% else %>
-                <%= image_tag "http://fakeimg.pl/270x180/BBBBBB/", class: "centet-block",
-                height: "100%" %>
-              <% end %>
-            </div>
-            <h4 class="text-center"><%= restaurant.name %></h4>
+  <br>
+
+  <div class="user-information-container">
+    <div class="panel panel-default followings">
+      <div class="panel-heading  my-panel-heading">
+        <h4 class="panel-title"><%= "#{@user.followings.size} followings" %></h4>
+      </div>
+      <div class="panel-body">
+        <% @user.followings.each do |following| %>
+          <div class="follow-img-frame">
+            <%= image_tag following.avatar, class: "img-responsive img-circle" if following.avatar? %>
+            <%= image_tag "https://cdn.unwire.hk/wp-content/uploads/2014/10/facebook-user.jpg",
+             class: "img-responsive img-circle" if !following.avatar?%>
           </div>
+          <h5 class="text-center"><%= link_to following.name, user_path(following) %></h5>
         <% end %>
-      <% end %>
+      </div>
+    </div>
+
+
+    <div class="panel panel-default commented-restaurants">
+      <div class="panel-heading  my-panel-heading">
+        <h4 class="panel-title"><%= "#{@commented_restaurants.size} commented restaurants" %></h4>
+      </div>
+      <div class="panel-body my-restaurant-link">
+        <% @commented_restaurants.each do |restaurant| %>
+          <%= link_to restaurant_path(restaurant) do %>
+            <div class="my-restaurant">
+              <div class="my-restaurant-img-frame">
+                <% if restaurant.image? %>
+                  <%= image_tag restaurant.image, class: "center-block",
+                  height: "100%" %>
+                <% else %>
+                  <%= image_tag "http://fakeimg.pl/270x180/BBBBBB/", class: "centet-block",
+                  height: "100%" %>
+                <% end %>
+              </div>
+              <h4 class="text-center"><%= restaurant.name %></h4>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="panel panel-default followers">
+      <div class="panel-heading  my-panel-heading">
+        <h4 class="panel-title"><%= "#{@user.followers.size} followers" %></h4>
+      </div>
+      <div class="panel-body">
+        <% @user.followers.each do |follower| %>
+          <div class="follow-img-frame">
+            <%= image_tag follower.avatar, class: "img-responsive img-circle" if follower.avatar?%>
+            <%= image_tag "https://cdn.unwire.hk/wp-content/uploads/2014/10/facebook-user.jpg",
+             class: "img-responsive img-circle" if !follower.avatar?%>
+          </div>
+          <h5 class="text-center"><%= link_to follower.name, user_path(follower) %></h5>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="panel panel-default favorited-restaurants">
+      <div class="panel-heading  my-panel-heading">
+        <h4 class="panel-title"><%= "#{@favorited_restaurants.size} favorite restaurants" %></h4>
+      </div>
+      <div class="panel-body my-restaurant-link">
+        <% @favorited_restaurants.each do |restaurant| %>
+          <%= link_to restaurant_path(restaurant) do %>
+            <div class="my-restaurant">
+              <div class="my-restaurant-img-frame">
+                <% if restaurant.image? %>
+                  <%= image_tag restaurant.image, class: "center-block",
+                  height: "100%" %>
+                <% else %>
+                  <%= image_tag "http://fakeimg.pl/270x180/BBBBBB/", class: "centet-block",
+                  height: "100%" %>
+                <% end %>
+              </div>
+              <h4 class="text-center"><%= restaurant.name %></h4>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
