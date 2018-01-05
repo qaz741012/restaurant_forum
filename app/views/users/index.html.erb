@@ -17,8 +17,10 @@
          class: "img-responsive" if !user.avatar?%>
         </div>
         <h4><%= link_to user.name, user_path(user) %></h4>
-        <div><%= render partial: "shared/follow", locals: {user: user} %></div>
-        <div><%= render partial: "shared/friend", locals: {} %></div>
+        <div class="user-index-button">
+          <div><%= render partial: "shared/follow", locals: {user: user} %></div>
+          <div><%= render partial: "shared/friend", locals: {user: user} %></div>
+        </div>
       </div>
     <% end %>
   </div>

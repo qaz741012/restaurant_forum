@@ -625,6 +625,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: 200px;
+  grid-row-gap: 15px;
 }
 
 .user-index-content * {
@@ -644,6 +645,14 @@ body {
 
 .user-index-content h4 a:hover {
   color: #BBBBBB;
+}
+
+.user-index-button {
+  margin: auto;
+}
+
+.user-index-button div {
+  display: inline-block;
 }
 
 .btn-follow, .btn-unfollow {
