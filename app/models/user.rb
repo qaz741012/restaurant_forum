@@ -38,8 +38,12 @@ class User < ApplicationRecord
     self.followings.include?(user)
   end
 
-  def be_friend_with?(user)
-    self.friends.include?(user)
+  def send_request?(user)
+    if self.friends.include?(user)
+      self.friendships.find_by(friend_id: user.id).status == "request"
+    else
+      false
+    end
   end
 
 end

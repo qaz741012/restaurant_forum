@@ -2,7 +2,7 @@ class FriendshipsController < ApplicationController
 
   def create
     friendship = current_user.friendships.build(friend_id: params[:friend_id], status: "request")
-    inverse_friendship = current_user.inverse_friendships.build(user_id: params[:friend_id])
+    inverse_friendship = current_user.inverse_friendships.build(user_id: params[:friend_id], status: "unconfirm")
 
     if friendship.save && inverse_friendship.save
       flash[:notice] = "successfully sent the request"
@@ -15,8 +15,10 @@ class FriendshipsController < ApplicationController
 
   def destroy
     friendship = current_user.friendships.where(friend_id: params[:id]).first
+    inverse_friendship = current_user.inverse_friendships.where(user_id: params[:id]).first
     friendship.destroy
-    flash[:alert] = "friendship destroyed"
+    inverse_friendship.destroy
+    flash[:alert] = "successfully cancel the request"
     redirect_back(fallback_location: root_path)
   end
 
