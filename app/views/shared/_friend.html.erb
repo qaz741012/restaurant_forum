@@ -5,6 +5,9 @@
   <% elsif current_user.be_friend_with?(user) %>
     <%= link_to "Unfriend", friendship_path(user), method: :delete,
     class: "btn btn-default btn-unfollow" %>
+  <% elsif user.send_request?(current_user) %>
+    <%= link_to "Confirm", confirm_friendship_path(current_user, friend_id: user.id),
+    method: :post, class: "btn btn-default btn-unconfirm" %>
   <% else %>
     <%= link_to "Friend", friendships_path(friend_id: user), method: :post,
     class: "btn btn-default btn-follow" %>

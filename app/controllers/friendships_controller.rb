@@ -16,6 +16,7 @@ class FriendshipsController < ApplicationController
   def destroy
     friendship = current_user.friendships.where(friend_id: params[:id]).first
     inverse_friendship = current_user.inverse_friendships.where(user_id: params[:id]).first
+
     friendship.destroy
     inverse_friendship.destroy
     flash[:alert] = "successfully cancel the request"
