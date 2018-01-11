@@ -2,7 +2,7 @@
   <% if current_user.send_request?(user) %>
     <%= link_to "Cancel Request", friendship_path(user), method: :delete,
     class: "btn btn-default btn-unconfirm" %>
-  <% elsif current_user.be_friend_with(user) %>
+  <% elsif current_user.be_friend_with?(user) %>
     <%= link_to "Unfriend", friendship_path(user), method: :delete,
     class: "btn btn-default btn-unfollow" %>
   <% else %>

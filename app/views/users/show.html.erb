@@ -21,7 +21,7 @@
             <%= render partial: "shared/follow", locals: {user: @user} %>
             <%= render partial: "shared/friend", locals: {user: @user} %>
           </td>
-          <td><%= link_to "我的好友", friend_list_users_path %></td>
+          <td><%= link_to "我的好友", friend_list_user_path(@user) %></td>
         </tr>
       </table>
 

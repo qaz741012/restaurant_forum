@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :edit, :update] do
 
-    collection do
+    member do
       get :friend_list
     end
 
