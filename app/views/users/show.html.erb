@@ -21,7 +21,6 @@
             <%= render partial: "shared/follow", locals: {user: @user} %>
             <%= render partial: "shared/friend", locals: {user: @user} %>
           </td>
-          <td><%= link_to "我的好友", friend_list_user_path(@user) %></td>
         </tr>
       </table>
 
@@ -30,6 +29,8 @@
           <span class="glyphicon glyphicon-pencil"></span>
         <% end %>
       <% end %>
+      <br>
+      <%= link_to "好友名單", friend_list_user_path(@user), class: "btn btn-default" %>
     </div>
   </div>
 
