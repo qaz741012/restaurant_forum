@@ -1,19 +1,47 @@
-<% if current_user == @user %>
+<div class="container-fluid friend-list-container">
+  <% if current_user == @user %>
+    <div class="panel panel-default">
+      <div class="panel-heading my-panel-heading">
+        <h4 class="panel-title"><%= "#{@unconfirm_friends.size} Unconfirm Friends" %></h4>
+      </div>
+      <div class="panel-body unconfirm-friends">
+        <% @unconfirm_friends.each do |unconfirm_friend| %>
+          <div>
+            <div>
+              <div class="follow-img-frame">
+                <%= image_tag unconfirm_friend.avatar, class: "img-responsive img-circle" if unconfirm_friend.avatar? %>
+                <%= image_tag "http://www.likoda.com.tw/style/images/frontpage/default_user_icon.png",
+                 class: "img-responsive img-circle" if !unconfirm_friend.avatar?%>
+              </div>
+              <h5 class="text-center"><%= link_to unconfirm_friend.name, user_path(unconfirm_friend) %></h5>
+            </div>
+            <div>
+              <%= link_to "Confirm", confirm_friendship_path(friend_id: unconfirm_friend.id),
+              method: :post, class: "btn btn-default btn-unconfirm" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
   <div class="panel panel-default">
     <div class="panel-heading my-panel-heading">
-      <h4 class="panel-title"><%= "#{@unconfirm_friends.size} Unconfirm Friends" %></h4>
+      <h4 class="panel-title"><%= "#{@user.friends.size - @unconfirm_friends.size} Friends" %></h4>
     </div>
-    <div class="panel-body">
-      <% @unconfirm_friends.each do |unconfirm_friend| %>
-        <div class="follow-img-frame">
-          <%= image_tag unconfirm_friend.avatar, class: "img-responsive img-circle" if unconfirm_friend.avatar? %>
-          <%= image_tag "https://cdn.unwire.hk/wp-content/uploads/2014/10/facebook-user.jpg",
-           class: "img-responsive img-circle" if !unconfirm_friend.avatar?%>
-        </div>
-        <h5 class="text-center"><%= link_to unconfirm_friend.name, user_path(unconfirm_friend) %></h5>
-        <%= link_to "Confirm", confirm_friendship_path(friend_id: unconfirm_friend.id),
-        method: :post %>
+    <div class="panel-body confirm-friends">
+      <% @user.friends.each do |friend| %>
+        <% if !@unconfirm_friends.include?(friend) %>
+          <div>
+            <div class="follow-img-frame">
+              <%= image_tag unconfirm_friend.avatar, class: "img-responsive img-circle" if friend.avatar? %>
+              <%= image_tag "http://www.likoda.com.tw/style/images/frontpage/default_user_icon.png",
+               class: "img-responsive img-circle" if !friend.avatar?%>
+            </div>
+            <h5 class="text-center"><%= link_to friend.name, user_path(friend) %></h5>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
-<% end %>
+</div>

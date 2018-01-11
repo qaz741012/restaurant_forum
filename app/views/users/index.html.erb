@@ -13,7 +13,7 @@
       <div class="user-index-content">
         <div class="user-index-img-frame">
           <%= image_tag user.avatar, class: "img-responsive" if user.avatar? %>
-          <%= image_tag "https://cdn.unwire.hk/wp-content/uploads/2014/10/facebook-user.jpg",
+          <%= image_tag "http://www.likoda.com.tw/style/images/frontpage/default_user_icon.png",
          class: "img-responsive" if !user.avatar?%>
         </div>
         <h4><%= link_to user.name, user_path(user) %></h4>

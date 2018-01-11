@@ -2,7 +2,7 @@
   <div class="profile-personal-info row">
     <div class="avatar-frame col-sm-3">
       <%= image_tag @user.avatar, class: "img-responsive img-circle" if @user.avatar? %>
-      <%= image_tag "https://cdn.unwire.hk/wp-content/uploads/2014/10/facebook-user.jpg",
+      <%= image_tag "http://www.likoda.com.tw/style/images/frontpage/default_user_icon.png",
        class: "img-responsive img-circle" if !@user.avatar?%>
     </div>
     <div class="col-sm-9">
@@ -44,7 +44,7 @@
         <% @user.followings.each do |following| %>
           <div class="follow-img-frame">
             <%= image_tag following.avatar, class: "img-responsive img-circle" if following.avatar? %>
-            <%= image_tag "https://cdn.unwire.hk/wp-content/uploads/2014/10/facebook-user.jpg",
+            <%= image_tag "http://www.likoda.com.tw/style/images/frontpage/default_user_icon.png",
              class: "img-responsive img-circle" if !following.avatar?%>
           </div>
           <h5 class="text-center"><%= link_to following.name, user_path(following) %></h5>
@@ -66,7 +66,7 @@
                   <%= image_tag restaurant.image, class: "center-block",
                   height: "100%" %>
                 <% else %>
-                  <%= image_tag "http://fakeimg.pl/270x180/BBBBBB/", class: "centet-block",
+                  <%= image_tag "http://fakeimg.pl/270x180/BBBBBB/", class: "center-block",
                   height: "100%" %>
                 <% end %>
               </div>
@@ -85,7 +85,7 @@
         <% @user.followers.each do |follower| %>
           <div class="follow-img-frame">
             <%= image_tag follower.avatar, class: "img-responsive img-circle" if follower.avatar?%>
-            <%= image_tag "https://cdn.unwire.hk/wp-content/uploads/2014/10/facebook-user.jpg",
+            <%= image_tag "http://www.likoda.com.tw/style/images/frontpage/default_user_icon.png",
              class: "img-responsive img-circle" if !follower.avatar?%>
           </div>
           <h5 class="text-center"><%= link_to follower.name, user_path(follower) %></h5>
@@ -106,7 +106,7 @@
                   <%= image_tag restaurant.image, class: "center-block",
                   height: "100%" %>
                 <% else %>
-                  <%= image_tag "http://fakeimg.pl/270x180/BBBBBB/", class: "centet-block",
+                  <%= image_tag "http://fakeimg.pl/270x180/BBBBBB/", class: "center-block",
                   height: "100%" %>
                 <% end %>
               </div>
