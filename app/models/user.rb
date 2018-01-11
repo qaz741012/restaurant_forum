@@ -46,4 +46,12 @@ class User < ApplicationRecord
     end
   end
 
+  def be_friend_with?(user)
+    if self.friends.include?(user)
+      self.friendships.find_by(friend_id: user.id).status == "confirm"
+    else
+      false
+    end
+  end
+
 end
