@@ -1,3 +1,19 @@
-<% @unconfirm_friends.each do |unconfirm_friend| %>
-  <%= unconfirm_friend.name %>
+<% if current_user == @user %>
+  <div class="panel panel-default">
+    <div class="panel-heading my-panel-heading">
+      <h4 class="panel-title"><%= "#{@unconfirm_friends.size} Unconfirm Friends" %></h4>
+    </div>
+    <div class="panel-body">
+      <% @unconfirm_friends.each do |unconfirm_friend| %>
+        <div class="follow-img-frame">
+          <%= image_tag unconfirm_friend.avatar, class: "img-responsive img-circle" if unconfirm_friend.avatar? %>
+          <%= image_tag "https://cdn.unwire.hk/wp-content/uploads/2014/10/facebook-user.jpg",
+           class: "img-responsive img-circle" if !unconfirm_friend.avatar?%>
+        </div>
+        <h5 class="text-center"><%= link_to unconfirm_friend.name, user_path(unconfirm_friend) %></h5>
+        <%= link_to "Confirm", confirm_friendship_path(friend_id: unconfirm_friend.id),
+        method: :post %>
+      <% end %>
+    </div>
+  </div>
 <% end %>

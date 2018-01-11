@@ -63,4 +63,5 @@ class User < ApplicationRecord
     return unconfirm_friends
   end
 
+
 end
