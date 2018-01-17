@@ -27,11 +27,11 @@
 
   <div class="panel panel-default">
     <div class="panel-heading my-panel-heading">
-      <h4 class="panel-title"><%= "#{@user.friends.size - @unconfirm_friends.size} Friends" %></h4>
+      <h4 class="panel-title"><%= "#{@user.friends.size - @unconfirm_friends.size - @request_friends.size} Friends" %></h4>
     </div>
     <div class="panel-body confirm-friends">
       <% @user.friends.each do |friend| %>
-        <% if !@unconfirm_friends.include?(friend) %>
+        <% if !@unconfirm_friends.include?(friend) && !@request_friends.include?(friend) %>
           <div>
             <div class="follow-img-frame">
               <%= image_tag unconfirm_friend.avatar, class: "img-responsive img-circle" if friend.avatar? %>

@@ -63,5 +63,14 @@ class User < ApplicationRecord
     return unconfirm_friends
   end
 
+  def request_friends
+    request_friendships = self.friendships.where(status: "request")
+    request_friends = []
+    request_friendships.each do |request_friendship|
+      request_friends << User.find(request_friendship.friend_id)
+    end
+    return request_friends
+  end
+
 
 end

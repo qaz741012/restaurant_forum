@@ -26,6 +26,7 @@ class UsersController < ApplicationController
 
   def friend_list
     @unconfirm_friends = @user.unconfirm_friends
+    @request_friends = @user.request_friends
   end
 
   private
